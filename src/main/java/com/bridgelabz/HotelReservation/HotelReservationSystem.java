@@ -81,19 +81,34 @@ public class HotelReservationSystem {
 		}
 	}
 
-	public static void main(String[] args) throws ParseException {
+	public void hotel_rating() {
+		String hotel = null;
+		if (hotel == "LakeWood") {
+			System.out.println("LakeWood rating is 3.");
+		}
+		if (hotel == "BridgeWood") {
+			System.out.println("LakeWood rating is 4.");
+		}
+		if (hotel == "RidgeWood") {
+			System.out.println("LakeWood rating is 5.");
+		}
+	}
 
-		HotelReservationSystem Lakewood = new HotelReservationSystem();
-		HotelReservationSystem Bridgewood = new HotelReservationSystem();
-		HotelReservationSystem Ridgewood = new HotelReservationSystem();
+	public static void main(String[] args) throws Exception {
+		HotelReservationSystem hotel1 = new HotelReservationSystem();
+		HotelReservationSystem hotel2 = new HotelReservationSystem();
+		HotelReservationSystem hotel3 = new HotelReservationSystem();
+
 		String sDate1 = "10-09-2020";
 		String sDate2 = "11-09-2020";
 		Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
 		Date date2 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate2);
 		System.out.println(sDate1 + "\t" + date1);
 		System.out.println(sDate2 + "\t" + date2);
-		Lakewood.cheapestWeekdayWeekendHotel();
-		Bridgewood.cheapestWeekdayWeekendHotel();
-		Ridgewood.cheapestWeekdayWeekendHotel();
+		HotelReservationSystem hotel = new HotelReservationSystem();
+		// hotel.findCheapestHotel();
+		// hotel.cheapestWeekdayWeekendHotel();
+		hotel.hotel_rating();
+
 	}
 }
