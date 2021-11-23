@@ -2,7 +2,8 @@ package com.bridgelabz.HotelReservation;
 
 public class Hotel {
 	private String hotelName;
-	private String customerType;
+	private String customerType1;
+	private String customerType2;
 	private int weekdayRatesForRegularCustomer;
 	private int weekendPriceForRegularCustomer;
 	private int weekdayRatesForRewardCustomer;
@@ -10,11 +11,12 @@ public class Hotel {
 	private int rating;
 
 	// Parameterized constructor to initialize instance variable
-	public Hotel(String hotelName, String customerType, int weekdayRatesForRegularCustomer,
-			int weekendPriceForRegularCustomer, int weekdayRatesForRewardCustomer, int weekendPriceForRewardCustomer,
-			int rating) {
+	public Hotel(String hotelName, String customerType1, int weekdayRatesForRegularCustomer,
+			int weekendPriceForRegularCustomer, String customerType2, int weekdayRatesForRewardCustomer,
+			int weekendPriceForRewardCustomer, int rating) {
 		this.hotelName = hotelName;
-		this.customerType = customerType;
+		this.customerType1 = customerType1;
+		this.customerType2 = customerType2;
 		this.weekdayRatesForRegularCustomer = weekdayRatesForRegularCustomer;
 		this.weekendPriceForRegularCustomer = weekendPriceForRegularCustomer;
 		this.weekdayRatesForRewardCustomer = weekdayRatesForRewardCustomer;
@@ -30,12 +32,20 @@ public class Hotel {
 		this.hotelName = hotelName;
 	}
 
-	public String getCustomerType() {
-		return customerType;
+	public String getCustomerType1() {
+		return customerType1;
 	}
 
-	public void setCustomerType(String customerType) {
-		this.customerType = customerType;
+	public void setCustomerType1(String customerType1) {
+		this.customerType1 = customerType1;
+	}
+
+	public String getCustomerType2() {
+		return customerType2;
+	}
+
+	public void setCustomerType2(String customerType2) {
+		this.customerType2 = customerType2;
 	}
 
 	public int getWeekdayRatesForRegularCustomer() {

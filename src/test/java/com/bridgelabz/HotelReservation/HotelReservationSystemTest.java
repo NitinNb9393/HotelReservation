@@ -7,8 +7,13 @@ public class HotelReservationSystemTest {
 	HotelReservationSystem Obj = new HotelReservationSystem();
 
 	@Test
-	public void checkAllThreeHotelsAreAdded() {
+	void checkAllThreeHotelsAreAdded() {
 		Obj.addHotelDetails();
 		Assert.assertEquals(3, Obj.hotelList.size());
+	}
+
+	@Test
+	void checkCheapestHotel() {
+		Obj.findCheapestHotel();
 	}
 }
