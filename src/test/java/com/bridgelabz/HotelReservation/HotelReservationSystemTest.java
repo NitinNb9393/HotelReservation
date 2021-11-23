@@ -8,9 +8,9 @@ public class HotelReservationSystemTest {
 
 	@Test
 	public void add_Hotels() {
-		Assert.assertTrue(hotelReservation.addHotel(new Hotel("LakeWood", "LakeWood", 110, 110)));
-		Assert.assertTrue(hotelReservation.addHotel(new Hotel("LakeWood", "Bridgewood", 110, 160)));
-		Assert.assertTrue(hotelReservation.addHotel(new Hotel("LakeWood", "Ridgewood", 110, 220)));
+		Assert.assertTrue(hotelReservation.addHotel(new Hotel("LakeWood", "Regular", 110, 90, 3)));
+		Assert.assertTrue(hotelReservation.addHotel(new Hotel("Bridgewood", "Regular", 150, 50, 4)));
+		Assert.assertTrue(hotelReservation.addHotel(new Hotel("Ridgewood", "Regular", 220, 150, 5)));
 	}
 
 	@Test
@@ -35,5 +35,11 @@ public class HotelReservationSystemTest {
 	public void addRatings() {
 		HotelReservationSystem ratings = new HotelReservationSystem();
 		ratings.hotel_rating();
+	}
+
+	@Test
+	public void toFindTheCheapestBestRatedHotelOnWeekdayAndWeekend() {
+		HotelReservationSystem cheapBestHotel = new HotelReservationSystem();
+		cheapBestHotel.cheapest_bestRated_hotel();
 	}
 }

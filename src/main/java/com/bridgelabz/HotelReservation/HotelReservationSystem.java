@@ -94,11 +94,37 @@ public class HotelReservationSystem {
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		HotelReservationSystem hotel1 = new HotelReservationSystem();
-		HotelReservationSystem hotel2 = new HotelReservationSystem();
-		HotelReservationSystem hotel3 = new HotelReservationSystem();
+	public void cheapest_bestRated_hotel() {
+		String hotel = null;
+		int sum_LakeWood = 0, sum_BridgeWood = 0, sum_RidgeWood = 0;
+		int LakeWood_Rate = 3, BridgeWood_Rate = 4, RidgeWood_Rate = 5;
+		if (hotel == "LakeWood") {
+			int weekday_rate = 110;
+			int weekend_rate = 90;
+			sum_LakeWood = (sum_LakeWood + weekday_rate + weekend_rate);
+		}
+		if (hotel == "BridgeWood") {
+			int weekday_rate = 150;
+			int weekend_rate = 50;
+			sum_BridgeWood = (sum_BridgeWood + weekday_rate + weekend_rate);
+		}
+		if (hotel == "RidgeWood") {
+			int weekday_rate = 220;
+			int weekend_rate = 150;
+			sum_RidgeWood = (sum_RidgeWood + weekday_rate + weekend_rate);
+		}
+		if ((sum_BridgeWood <= sum_LakeWood && sum_BridgeWood < sum_RidgeWood)
+				&& (LakeWood_Rate < BridgeWood_Rate && BridgeWood_Rate < RidgeWood_Rate)) {
+			System.out.println("BridgeWood");
+			System.out.println("Rating:" + BridgeWood_Rate);
+			System.out.println("Total Rates: $" + sum_BridgeWood);
+		}
+	}
 
+	public static void main(String[] args) throws Exception {
+		Hotel hotel1 = new Hotel("LakeWood", "Regular", 110, 90, 3);
+		Hotel hotel2 = new Hotel("BridgeWood", "Regular", 150, 50, 4);
+		Hotel hotel3 = new Hotel("RidgeWood", "Regular", 220, 150, 5);
 		String sDate1 = "10-09-2020";
 		String sDate2 = "11-09-2020";
 		Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
@@ -106,9 +132,10 @@ public class HotelReservationSystem {
 		System.out.println(sDate1 + "\t" + date1);
 		System.out.println(sDate2 + "\t" + date2);
 		HotelReservationSystem hotel = new HotelReservationSystem();
-		// hotel.findCheapestHotel();
-		// hotel.cheapestWeekdayWeekendHotel();
+		hotel.weekday_weekend_rate();
+		;
+		hotel.cheapestWeekdayWeekendHotel();
 		hotel.hotel_rating();
-
+		hotel.cheapest_bestRated_hotel();
 	}
 }
